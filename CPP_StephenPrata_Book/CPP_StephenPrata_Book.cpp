@@ -114,5 +114,43 @@ int main(void)
         
     return 0;
 }
+*/
+
+//-----------------------------------------------------
+
+/*
+Chapter 1
+Task 4
+
+    Write a program that asks the user to enter his or her age.The program then should display the age in months :
+        Enter your age : 29
+        Your age in months is 384.
+*/
+
+/*
+#include <iostream>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+int monthsAge(int yearsAge)
+{
+    return yearsAge * 12;
+}
+
+int main()
+{
+    int yearsAge;
+
+    cout << "Please, enter your age: ";
+    cin >> yearsAge;
+    cout << "Your age in months: " << monthsAge(yearsAge) << endl;
+       
+    return 0;
+}
 
 */
+
+//-----------------------------------------------------
