@@ -1,4 +1,4 @@
-
+﻿
 /*
 
 Chapter 1
@@ -20,12 +20,12 @@ using std::endl;
 int main()
 {
 
-    const string myName = "Nikolay Bondarenko";
+    const string MY_NAME = "Nikolay Bondarenko";
     string adress = "My adress!";
     int houseNumber = 555;
     int flatNumber = 777;
 
-    cout << "My name: " << myName << endl;
+    cout << "My name: " << MY_NAME << endl;
     cout << "My adress: " << adress << endl;
     cout << "My house number: " << houseNumber << endl;
     cout << "My flat number: " << flatNumber << endl;
@@ -150,7 +150,52 @@ int main()
        
     return 0;
 }
-
 */
 
 //-----------------------------------------------------
+
+/*
+Chapter 1
+Task 5
+
+    Write a program that has main() call a user - defined function that takes a Celsius
+    temperature value as an argument and then returns the equivalent Fahrenheit value.
+    The program should request the Celsius value as input from the user and display
+    the result, as shown in the following code :
+
+            Please enter a Celsius value : 20
+            20 degrees Celsius is 68 degrees Fahrenheit.
+
+    For reference, here is the formula for making the conversion :
+            
+            Fahrenheit = 1.8 × degrees Celsius + 32.0
+ */
+
+/*
+#include <iostream>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+
+double celsiusToFahrenheit(double celsiusTemperature)
+{
+    return 1.8 * celsiusTemperature + 32.0;
+}
+
+int main()
+{
+    double celsiusTemperature;
+    
+    cout << "Please enter a temperature in Celsius degrees: ";
+    cin >> celsiusTemperature;
+    cout << celsiusTemperature << " degrees Celsius is " << celsiusToFahrenheit(celsiusTemperature) << " degrees Fahrenheit." << endl;
+        
+    return 0;
+}
+*/
+
+//-----------------------------------------------------
+
