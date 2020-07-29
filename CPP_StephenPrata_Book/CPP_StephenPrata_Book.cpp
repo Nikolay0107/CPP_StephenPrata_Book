@@ -8,7 +8,7 @@ Task 1
     privacy,a fictitious name and address).
 */
 
-
+/*
 #include <iostream>
 
 using std::string;
@@ -31,7 +31,7 @@ int main()
     cout << "My flat number: " << flatNumber << endl;
 }
 
-
+*/
 
 //-----------------------------------------------------
 
@@ -70,3 +70,49 @@ int main(void)
 */
 
 //-----------------------------------------------------
+
+/*
+
+Chapter 1
+Task 3
+
+    Write a C++ program that uses three user-defined functions (counting main() as one) and produces the following output:
+
+        Three blind mice
+        Three blind mice
+        See how they run
+        See how they run
+
+    One function, called two times, should produce the first two lines,and the remaining function,
+    also called twice, should produce the remaining output.
+*/
+
+/*
+#include <iostream>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+void print_ThreeBlindMice()
+{
+    cout << "Three blind mice" << endl;
+}
+
+void print_SeeHowTheyTun()
+{
+    cout << "See how they run" << endl;
+}
+
+int main(void)
+{
+    print_ThreeBlindMice();
+    print_ThreeBlindMice();
+    print_SeeHowTheyTun();
+    print_SeeHowTheyTun();
+        
+    return 0;
+}
+
+*/
