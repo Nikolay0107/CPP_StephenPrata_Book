@@ -1,6 +1,5 @@
 ﻿
 /*
-
 Chapter 1
 Task 1
 
@@ -15,11 +14,8 @@ using std::string;
 using std::cout;
 using std::endl;
 
-
-
 int main()
 {
-
     const string MY_NAME = "Nikolay Bondarenko";
     string adress = "My adress!";
     int houseNumber = 555;
@@ -30,13 +26,11 @@ int main()
     cout << "My house number: " << houseNumber << endl;
     cout << "My flat number: " << flatNumber << endl;
 }
-
 */
 
 //-----------------------------------------------------
 
 /*
-
 Chapter 1
 Task 2
 
@@ -72,7 +66,6 @@ int main(void)
 //-----------------------------------------------------
 
 /*
-
 Chapter 1
 Task 3
 
@@ -179,7 +172,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-
 double celsiusToFahrenheit(double celsiusTemperature)
 {
     return 1.8 * celsiusTemperature + 32.0;
@@ -193,6 +185,52 @@ int main()
     cin >> celsiusTemperature;
     cout << celsiusTemperature << " degrees Celsius is " << celsiusToFahrenheit(celsiusTemperature) << " degrees Fahrenheit." << endl;
         
+    return 0;
+}
+*/
+
+//-----------------------------------------------------
+
+/*
+Chapter 1
+Task 6
+
+    Write a program that has main() call a user-defined function that takes a distance
+    in light years as an argument and then returns the distance in astronomical units.
+    The program should request the light year value as input from the user and display
+    the result,as shown in the following code:
+
+        Enter the number of light years: 4.2
+        4.2 light years = 265608 astronomical units.
+
+    An astronomical unit is the average distance from the earth to the sun (about
+    150,000,000 km or 93,000,000 miles),and a light year is the distance light travels in
+    a year (about 10 trillion kilometers or 6 trillion miles). (The nearest star after the
+    sun is about 4.2 light years away.) Use type double (as in Listing 2.4) and this conversion factor:
+        
+        1 light year = 63,240 astronomical units
+*/
+
+/*
+#include <iostream>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+double lightYearToAstronomicalUnits(double lightYears)
+{
+    return lightYears * 63.24;
+}
+
+int main()
+{
+    double lightYears;
+    cout << "Enter the number of light years: ";
+    cin >> lightYears;
+    cout << lightYears << " light years = " << lightYearToAstronomicalUnits(lightYears) << " astronomical units." << endl;
+
     return 0;
 }
 */
