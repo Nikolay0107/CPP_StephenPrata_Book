@@ -4,6 +4,8 @@
 Chapter 1
 Task 1
 
+    Write a C++ program that displays your name and address (or if you value your
+    privacy,a fictitious name and address).
 */
 
 /*
@@ -36,6 +38,8 @@ int main()
 Chapter 1
 Task 2
 
+    Write a C++ program that asks for a distance in furlongs and converts it to yards.
+    (One furlong is 220 yards.)
 */
 
 /*
