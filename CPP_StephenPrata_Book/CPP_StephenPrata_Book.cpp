@@ -8,7 +8,7 @@ Task 1
     privacy,a fictitious name and address).
 */
 
-/*
+
 #include <iostream>
 
 using std::string;
@@ -19,17 +19,19 @@ using std::endl;
 
 int main()
 {
+
+    const string myName = "Nikolay Bondarenko";
     string adress = "My adress!";
     int houseNumber = 555;
     int flatNumber = 777;
 
-
+    cout << "My name: " << myName << endl;
     cout << "My adress: " << adress << endl;
     cout << "My house number: " << houseNumber << endl;
     cout << "My flat number: " << flatNumber << endl;
 }
 
-*/
+
 
 //-----------------------------------------------------
 
