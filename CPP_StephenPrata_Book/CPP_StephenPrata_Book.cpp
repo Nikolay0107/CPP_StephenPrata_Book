@@ -1,6 +1,6 @@
 ﻿
 /*
-Chapter 1
+Chapter 2
 Task 1
 
     Write a C++ program that displays your name and address (or if you value your
@@ -31,7 +31,7 @@ int main()
 //-----------------------------------------------------
 
 /*
-Chapter 1
+Chapter 2
 Task 2
 
     Write a C++ program that asks for a distance in furlongs and converts it to yards.
@@ -66,7 +66,7 @@ int main(void)
 //-----------------------------------------------------
 
 /*
-Chapter 1
+Chapter 2
 Task 3
 
     Write a C++ program that uses three user-defined functions (counting main() as one) and produces the following output:
@@ -112,7 +112,7 @@ int main(void)
 //-----------------------------------------------------
 
 /*
-Chapter 1
+Chapter 2
 Task 4
 
     Write a program that asks the user to enter his or her age.The program then should display the age in months :
@@ -148,7 +148,7 @@ int main()
 //-----------------------------------------------------
 
 /*
-Chapter 1
+Chapter 2
 Task 5
 
     Write a program that has main() call a user - defined function that takes a Celsius
@@ -192,7 +192,7 @@ int main()
 //-----------------------------------------------------
 
 /*
-Chapter 1
+Chapter 2
 Task 6
 
     Write a program that has main() call a user-defined function that takes a distance
@@ -238,7 +238,7 @@ int main()
 //-----------------------------------------------------
 
 /*
-Chapter 1
+Chapter 2
 Task 7
 
     Write a program that asks the user to enter an hour value and a minute value.The
