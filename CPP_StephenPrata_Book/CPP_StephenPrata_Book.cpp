@@ -265,8 +265,8 @@ void yourTime(int hours, int minutes)
 
 int main()
 {
-    int hours;
-    int minutes;
+    int hours{};
+    int minutes{};
 
     cout << "Enter the number of hours: ";
     cin >> hours;
