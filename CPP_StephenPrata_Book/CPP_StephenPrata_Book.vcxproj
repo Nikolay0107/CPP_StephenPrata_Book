@@ -24,6 +24,7 @@
     <ProjectGuid>{99874866-f5d7-4b49-a778-a1ada5ec69f2}</ProjectGuid>
     <RootNamespace>CPPStephenPrataBook</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CPP_StephenPrata_Book_1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
