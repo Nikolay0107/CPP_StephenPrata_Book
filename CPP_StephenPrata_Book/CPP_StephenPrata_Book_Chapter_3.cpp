@@ -213,7 +213,7 @@ Task 5
 		You can use the Internet to get more recent figures
 */
 
-
+/*
 #include <iostream>
 
 using std::string;
@@ -237,3 +237,41 @@ int main()
 	
 	return 0;
 }
+*/
+
+/*
+Chapter 3
+Task 6
+
+	Write a program that asks how many miles you have driven and how many gallons
+	of gasoline you have used and then reports the miles per gallon your car has gotten.
+	Or, if you prefer, the program can request distance in kilometers and petrol in liters
+	and then report the result European style, in liters per 100 kilometers.
+*/
+/*
+#include <iostream>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	cout << "Enter the distance in kilometers you have driven: ";
+	float distance{};
+	cin >> distance;
+
+	cout << "How many liters of gasoline you have used: ";
+	float liters_of_gasoline{};
+	cin >> liters_of_gasoline;
+
+	float result{};
+	result = (100.0f * liters_of_gasoline) / distance;
+	cout << "Your car has gotten "<< result <<" liters per 100 kilometers." << endl;
+
+	return 0;
+}
+*/
+
+
