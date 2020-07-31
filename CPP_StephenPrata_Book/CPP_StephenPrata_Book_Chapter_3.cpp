@@ -108,7 +108,6 @@ You should use a separate variable for each input value.A sample run should look
 */
 /*
 #include <iostream>
-#include <cmath>
 
 using std::string;
 using std::cout;
@@ -141,5 +140,52 @@ int main()
 	result = ((seconds_of_arc/SECONDS_IN_MINUTE) + minutes_of_arc) / MINUTES_IN_DEGREE + degrees;
 	
 	cout <<"\n" << degrees << " degrees, " << minutes_of_arc << " minutes, " << seconds_of_arc << " seconds = " << result << " degrees." << endl << endl;
+}
+*/
+
+
+/*
+Chapter 3
+Task 4
+
+	Write a program that asks the user to enter the number of seconds as an integer
+	value (use type long, or, if available, long long) and that then displays the equivalent time in days,
+	hours, minutes,and seconds. Use symbolic constants to represent
+	the number of hours in the day, the number of minutes in an hour,and the number
+	of seconds in a minute.The output should look like this:
+
+		Enter the number of seconds: 31600000
+		31600000 seconds = 365 days, 17 hours, 46 minutes, 40 seconds
+*/
+/*
+#include <iostream>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	const int SECONDS_IN_MINUTE = 60;
+	const int MINUTES_IN_HOUR = 60;
+	const int HOURS_IN_DAY = 24;
+		
+	cout << "Enter the number of seconds: ";
+	
+	long long number_of_seconds;
+	cin >> number_of_seconds;
+
+	long long days{};
+	int hours{};
+	int minutes{};
+	int seconds{};
+
+	days = number_of_seconds / (HOURS_IN_DAY * MINUTES_IN_HOUR * SECONDS_IN_MINUTE);
+	hours = number_of_seconds % (HOURS_IN_DAY * MINUTES_IN_HOUR * SECONDS_IN_MINUTE) / (MINUTES_IN_HOUR * SECONDS_IN_MINUTE);
+	minutes = number_of_seconds % (MINUTES_IN_HOUR * SECONDS_IN_MINUTE) / SECONDS_IN_MINUTE;
+	seconds = number_of_seconds % SECONDS_IN_MINUTE;
+
+	cout << number_of_seconds << " seconds = " << days << " days, " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds" << endl;
 }
 */
