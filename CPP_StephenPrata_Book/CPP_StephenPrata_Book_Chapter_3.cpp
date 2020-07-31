@@ -31,6 +31,8 @@ int main()
 	inches_remainder = height_in_inches % FOOT_TO_INCHES_RATIO;
 
 	cout << "\aYour height is " << height_in_foot << " foot and " << inches_remainder << " inches!\n";
+
+	return 0;
 }
 */
 
@@ -88,6 +90,8 @@ int main()
 	body_mass_index = weight_in_kilograms / pow(height_in_meter, 2);
 
 	cout << "\aYour BMI is: " << body_mass_index << endl;
+
+	return 0;
 }
 */
 
@@ -140,6 +144,8 @@ int main()
 	result = ((seconds_of_arc/SECONDS_IN_MINUTE) + minutes_of_arc) / MINUTES_IN_DEGREE + degrees;
 	
 	cout <<"\n" << degrees << " degrees, " << minutes_of_arc << " minutes, " << seconds_of_arc << " seconds = " << result << " degrees." << endl << endl;
+
+	return 0;
 }
 */
 
@@ -187,6 +193,8 @@ int main()
 	seconds = number_of_seconds % SECONDS_IN_MINUTE;
 
 	cout << number_of_seconds << " seconds = " << days << " days, " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds" << endl;
+
+	return 0;
 }
 */
 
@@ -215,18 +223,17 @@ using std::endl;
 
 int main()
 {
-
-
 	cout << "Enter the world's population: ";
-	int world_population{};
+	unsigned long long world_population{};
 	cin >> world_population;
+
 	cout << "\nEnter the population of your country: ";
-	int country_population{};
+	unsigned long long country_population{};
 	cin >> country_population;
 
-	int percent_of_population{};
-
-	percent_of_population = country_population/world_population;
-	
+	float percent_of_population{};
+	percent_of_population = (static_cast<float>(country_population)/world_population) * 100.0f;
 	cout << "The population of your country is " << percent_of_population << "% of the world population." << endl;
+	
+	return 0;
 }
