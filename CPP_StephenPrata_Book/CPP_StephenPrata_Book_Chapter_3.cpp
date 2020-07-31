@@ -36,7 +36,6 @@ int main()
 
 //-----------------------------------------------------
 
-
 /*
 Chapter 3
 Task 2
@@ -49,24 +48,21 @@ Task 2
 	weight in pounds into your mass in kilograms by dividing by 2.2.Finally, compute
 	your BMI by dividing your mass in kilograms by the square of your height in
 	meters.Use symbolic constants to represent the various conversion factors.
-
 */
 
 /*
+
 #include <iostream>
 #include <cmath>
-#include <iomanip>
 
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
-using std::setprecision;
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	setprecision(5);
 	const int FEET_TO_INCHES_RATIO = 12;
 	const float INCHES_TO_METER_RATIO = 0.0254f ;
 	const float POUND_TO_KILOGRAM_RATIO = 2.2f;
@@ -92,6 +88,58 @@ int main()
 	body_mass_index = weight_in_kilograms / pow(height_in_meter, 2);
 
 	cout << "\aYour BMI is: " << body_mass_index << endl;
+}
+*/
 
+/*
+Chapter 3
+Task 3
+
+Write a program that asks the user to enter a latitude in degrees, minutes,and seconds and
+that then displays the latitude in decimal format.There are 60 seconds of arc to a minute
+and 60 minutes of arc to a degree; represent these values with symbolic constants.
+You should use a separate variable for each input value.A sample run should look like this:
+	
+	Enter a latitude in degrees, minutes, and seconds:
+	First, enter the degrees: 37
+	Next, enter the minutes of arc: 51
+	Finally, enter the seconds of arc: 19
+	37 degrees, 51 minutes, 19 seconds = 37.8553 degrees
+*/
+/*
+#include <iostream>
+#include <cmath>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	const int SECONDS_IN_MINUTE = 60;
+	const int MINUTES_IN_DEGREE = 60;
+
+
+	cout << "Enter a latitude in degrees, minutes, and seconds!" << endl << endl;
+	cout << "First, enter the degrees: ";
+
+	float degrees{};
+	cin >> degrees;
+
+	cout << "\nNext, enter the minutes of arc: ";
+
+	float minutes_of_arc{};
+	cin >> minutes_of_arc;
+
+	cout << "\nFinally, enter the seconds of arc: ";
+
+	float seconds_of_arc{};
+	cin >> seconds_of_arc;
+	
+	float result{};
+	result = ((seconds_of_arc/SECONDS_IN_MINUTE) + minutes_of_arc) / MINUTES_IN_DEGREE + degrees;
+	
+	cout <<"\n" << degrees << " degrees, " << minutes_of_arc << " minutes, " << seconds_of_arc << " seconds = " << result << " degrees." << endl << endl;
 }
 */
