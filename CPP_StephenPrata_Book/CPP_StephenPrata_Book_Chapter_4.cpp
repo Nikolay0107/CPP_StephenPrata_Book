@@ -90,7 +90,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-
 int main()
 {
 	string name{};
@@ -103,6 +102,52 @@ int main()
 	cout << "I have some delicious " << dessert;
 	cout << " for you, " << name << ".\n";
 	
+	return 0;
+}
+*/
+
+/*
+Chapter 4
+Task 3
+
+Write a program that asks the user to enter his or her first name and then last
+name, and that then constructs, stores, and displays a third string, consisting of the
+user’s last name followed by a comma, a space, and first name.Use char arraysand
+functions from the cstring header file.A sample run could look like this:
+	Enter your first name : Flip
+	Enter your last name : Fleming
+	Here’s the information in a single string : Fleming, Flip
+*/
+/*
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	const int ARR_SIZE = 15;
+
+
+	cout << endl << "Enter your first name ? ";
+	char first_name[ARR_SIZE];
+	cin.getline(first_name, ARR_SIZE);
+
+	cout << endl << "Enter your last name ? ";
+	char last_name[ARR_SIZE];
+	cin.getline(last_name, ARR_SIZE);
+
+	char single_string[40];
+
+	strcpy_s(single_string, last_name);
+	strcat_s(single_string, ", ");
+	strcat_s(single_string, first_name);
+
+	cout << endl << "Here's the information in à single string: " << single_string << endl;
+
 	return 0;
 }
 */
