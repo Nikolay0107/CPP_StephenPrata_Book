@@ -232,3 +232,102 @@ int main()
 }
 */
 
+/*
+Chapter 4
+Task 6
+
+	The CandyBar structure contains three members,as described in Programming
+	Exercise 5.Write a program that creates an array of three CandyBar structures,
+	initializes them to values of your choice,and then displays the contents of each structure.
+
+*/
+/*
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+struct CandyBar
+{
+	string name;
+	float weight;
+	int calories;
+};
+
+int main()
+{
+	CandyBar candyRoshen[3]
+	{
+		{"Snickers", 101.5f, 1000},
+		{"Mars", 60.8f, 600},
+		{"Bounty", 55.0f, 700}
+	};
+
+	cout << "Candy " << candyRoshen[0].name << " has a weight of " << candyRoshen[0].weight <<
+		" grams and contains " << candyRoshen[0].calories << " calories!" << endl;
+
+	cout << "Candy " << candyRoshen[1].name << " has a weight of " << candyRoshen[1].weight <<
+		" grams and contains " << candyRoshen[1].calories << " calories!" << endl;
+
+	cout << "Candy " << candyRoshen[2].name << " has a weight of " << candyRoshen[2].weight <<
+		" grams and contains " << candyRoshen[2].calories << " calories!" << endl;
+
+	return 0;
+}
+*/
+
+/*
+Chapter 4
+Task 7
+
+William Wingate runs a pizza-analysis service. For each pizza, he needs to record
+the following information:
+
+	- The name of the pizza company, which can consist of more than one word
+	- The diameter of the pizza
+	- The weight of the pizza
+
+Devise a structure that can hold this information and write a program that uses a
+structure variable of that type.The program should ask the user to enter each of the
+preceding items of information,and then the program should display that information.
+Use cin (or its methods) and cout.
+*/
+
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+struct Pizza_info
+{
+	string pizza_company_name;
+	int pizza_diameter;
+	float pizza_weight;
+};
+
+int main()
+{
+	Pizza_info userPizza;
+
+	cout << "Enter the pizza company name: ";
+	getline(cin, userPizza.pizza_company_name );
+
+	cout << endl << "Enter the pizza diameter: ";
+	cin >> userPizza.pizza_diameter;
+
+	cout << endl << "Enter the pizza weight: ";
+	cin >> userPizza.pizza_weight;
+
+	cout << endl << endl << "DATA:" << endl;
+	cout << "User's pizza company name: " << userPizza.pizza_company_name<< endl;
+	cout << "User's pizza diameter: "<< userPizza.pizza_diameter << " centimeters"<< endl;
+	cout << "User's pizza weight:" << userPizza.pizza_weight <<"grams" << endl;
+
+	return 0;
+};
