@@ -381,3 +381,51 @@ int main()
 	return 0;
 };
 */
+
+
+/*
+Chapter 4
+Task 9
+
+	Do Programming Exercise 6, but instead of declaring an array of three CandyBar
+	structures, use new to allocate the array dynamically
+*/
+
+/*
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+struct CandyBar
+{
+	string name;
+	float weight;
+	int calories;
+};
+
+int main()
+{
+	CandyBar *candyRoshen = new CandyBar [3]
+	{
+		{"Snickers", 101.5f, 1000},
+		{"Mars", 60.8f, 600},
+		{"Bounty", 55.0f, 700}
+	};
+
+	cout << "Candy " << candyRoshen[0].name << " has a weight of " << candyRoshen[0].weight <<
+		" grams and contains " << candyRoshen[0].calories << " calories!" << endl;
+
+	cout << "Candy " << candyRoshen[1].name << " has a weight of " << candyRoshen[1].weight <<
+		" grams and contains " << candyRoshen[1].calories << " calories!" << endl;
+
+	cout << "Candy " << candyRoshen[2].name << " has a weight of " << candyRoshen[2].weight <<
+		" grams and contains " << candyRoshen[2].calories << " calories!" << endl;
+
+	delete[] candyRoshen;
+	return 0;
+}
+*/
