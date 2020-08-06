@@ -429,3 +429,46 @@ int main()
 	return 0;
 }
 */
+
+/*
+Chapter 4
+Task 10
+
+	Write a program that requests the user to enter three times for the 40-yd dash (or
+	40-meter, if you prefer) and then displays the times and the average. Use an array
+	object to hold the data. (Use a built-in array if array is not available.)
+*/
+
+/*
+#include <iostream>
+#include <string>
+#include <array>
+
+using std::array;
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	const int ARR_SIZE = 3;
+	array<float, ARR_SIZE> results_array{};
+
+	cout << "Enter the first result: ";
+	cin >> results_array[0];
+	
+	cout << "Enter the second result: ";
+	cin >> results_array[1];
+
+	cout << "Enter the third result: ";
+	cin >> results_array[2];
+
+	float result_average = (results_array[0] + results_array[1] + results_array[2]) / ARR_SIZE;
+	cout << endl << "The average of the result is: " << result_average;
+	cout << endl << endl;
+
+	return 0;
+}
+
+*/
