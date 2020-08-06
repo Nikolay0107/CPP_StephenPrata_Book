@@ -296,6 +296,7 @@ preceding items of information,and then the program should display that informat
 Use cin (or its methods) and cout.
 */
 
+/*
 #include <iostream>
 #include <string>
 
@@ -327,7 +328,56 @@ int main()
 	cout << endl << endl << "DATA:" << endl;
 	cout << "User's pizza company name: " << userPizza.pizza_company_name<< endl;
 	cout << "User's pizza diameter: "<< userPizza.pizza_diameter << " centimeters"<< endl;
-	cout << "User's pizza weight:" << userPizza.pizza_weight <<"grams" << endl;
+	cout << "User's pizza weight: " << userPizza.pizza_weight <<" grams" << endl;
 
 	return 0;
 };
+*/
+
+/*
+Chapter 4
+Task 8
+
+	Do Programming Exercise 7 but use new to allocate a structure instead of declaring
+	a structure variable.Also have the program request the pizza diameter before it
+	requests the pizza company name.
+*/
+
+/*
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+struct Pizza_info
+{
+	string pizza_company_name;
+	int pizza_diameter;
+	float pizza_weight;
+};
+
+int main()
+{
+	Pizza_info *pointer_pizza_info = new Pizza_info;
+
+	cout << "Enter the pizza company name: ";
+	getline(cin, pointer_pizza_info->pizza_company_name);
+
+	cout << endl << "Enter the pizza diameter: ";
+	cin >> pointer_pizza_info->pizza_diameter;
+
+	cout << endl << "Enter the pizza weight: ";
+	cin >> pointer_pizza_info->pizza_weight;
+
+	cout << endl << endl << "DATA:" << endl;
+	cout << "User's pizza company name: " << (*pointer_pizza_info).pizza_company_name << endl;  // first way
+	cout << "User's pizza diameter: " << pointer_pizza_info->pizza_diameter << " centimeters" << endl; // second way
+	cout << "User's pizza weight: " << pointer_pizza_info->pizza_weight << " grams" << endl;
+
+	delete pointer_pizza_info;
+	return 0;
+};
+*/
