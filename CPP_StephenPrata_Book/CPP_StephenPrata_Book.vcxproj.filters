@@ -24,5 +24,8 @@
     <ClCompile Include="CPP_StephenPrata_Book_Chapter_4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CPP_StephenPrata_Book_Chapter_5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
