@@ -80,3 +80,30 @@ Write a program that asks the user to type in numbers.
 After each entry, the program should report the cumulative sum
 of the entries to date.The program should terminate when the user enters 0.
 */
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	int value{}, result{};
+	cout << "This program will summarized all of entered numbers." << endl;
+	cout << "Enter '0' to stop execution." << endl << endl;
+
+	do
+	{
+		cout  << "Please, enter the number: ";
+		cin >> value;
+		result += value;
+		cout << endl << "Sum of all numbers is: " << result << endl << endl;
+
+	} while (value!=0);
+
+	cout << "Goodbye!" << endl << endl;
+
+	return 0;
+}
+*/
