@@ -36,3 +36,38 @@ int main()
 	return 0;
 }
 */
+
+
+/*
+Chapter 5
+Task 2
+
+Redo Listing 5.4 using a type array object instead of a built - in array and type
+long double instead of long long.Find the value of 100!
+*/
+
+/*
+#include <iostream>
+#include <array>
+
+using std::array;
+using std::cout;
+using std::endl;
+
+const int AR_SIZE = 101;
+
+int main()
+{
+	array <long double, AR_SIZE> factorial_array{};
+		
+	factorial_array[1] = factorial_array[0] = 1.0;
+
+	for (int i = 2; i < AR_SIZE; i++)
+	{
+		factorial_array[i] = i * factorial_array[i - 1];
+		cout << i << "!\t= " << factorial_array[i] << endl;
+	}
+	
+	return 0;
+}
+*/
