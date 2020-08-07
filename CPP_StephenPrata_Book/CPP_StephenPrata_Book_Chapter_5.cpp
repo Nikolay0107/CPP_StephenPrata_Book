@@ -1,4 +1,4 @@
-/*
+﻿/*
 Chapter 5
 Task 1
 
@@ -104,6 +104,60 @@ int main()
 
 	cout << "Goodbye!" << endl << endl;
 
+	return 0;
+}
+*/
+
+
+/*
+Chapter 5
+Task 4
+
+Daphne invests $100 at 10% simple interest.That is, every year, the investment earns
+10% of the original investment, or $10 each and every year:
+
+	interest = 0.10 × original balance
+
+At the same time, Cleo invests $100 at 5% compound interest.That is, interest is 5%
+of the current balance, including previous additions of interest:
+
+	interest = 0.05 × current balance
+
+Cleo earns 5% of $100 the first year, giving her $105.The next year she earns 5% of
+$105, or $5.25,and so on.Write a program that finds how many years it takes for
+the value of Cleo’s investment to exceed the value of Daphne’s investment and then
+displays the value of both investments at that time.
+*/
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+const float SIMPLE_INTEREST = 0.1f;
+const float COMPOUND_INTEREST = 0.05f;
+const float INITIAL_BALANCE = 100.0f;
+
+int main()
+{
+	float daphne_balance = INITIAL_BALANCE;
+	float cleo_balance = INITIAL_BALANCE;
+	int count_years{};
+
+
+	for (count_years = 1; cleo_balance <= daphne_balance; count_years++)
+	{
+		daphne_balance += INITIAL_BALANCE * SIMPLE_INTEREST;
+	
+		cleo_balance += cleo_balance * COMPOUND_INTEREST;
+	
+		cout << "Year " << count_years << "\t\tDaphne balance is: " << daphne_balance << "\t Cleo balance is: " << cleo_balance << endl;
+	}
+	int result_year = count_years - 1;
+
+	cout << endl << endl << "After " << result_year << " years Cleo balance will be bigger than Daphne balance" << endl << endl << endl;
+	
 	return 0;
 }
 */
