@@ -193,7 +193,6 @@ int main()
 	for (int i = 0, j = 0; i < ALL_MONTH; i++, j++)
 	{
 		cout << "Please, enter the number of the books, which was sold in " << months_of_the_year[j] << ": ";
-		int value{};
 		cin >> arr[i];
 	}
 
@@ -213,3 +212,69 @@ int main()
 	return 0;
 }
 */
+
+
+/*
+Chapter 5
+Task 6
+
+Do Programming Exercise 5 but use a two-dimensional array to store input for 3
+years of monthly sales. Report the total sales for each individual year and for the
+combined years.
+
+*/
+
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+const int ALL_MONTH = 12;
+const int ALL_YEARS = 3;
+
+int main()
+{
+	string months_of_the_year[ALL_MONTH] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+	
+	int** arr = new int* [ALL_YEARS];
+	int* yearlySales = new int[ALL_YEARS];
+	int* total_sales = new int{};
+	
+	//	dynamic array initialization
+
+	for (int year = 0; year < ALL_YEARS; year++)
+	{
+		arr[year] = new int[ALL_MONTH];
+	}
+
+	for (int year = 0; year < ALL_YEARS; year++)
+	{
+		yearlySales[year] = 0;
+
+		for (int month = 0; month < ALL_MONTH; month++)
+		{
+			cout << "Please, enter the number of the books, which was sold in " << months_of_the_year[month] << " in year " << year+1<< ": ";
+			cin >> arr[year][month];
+			yearlySales[year] += arr[year][month];
+		}
+		cout << "In the year <" << year + 1 << "> was sold " << yearlySales[year] << " books!" << endl;
+		*total_sales += yearlySales[year];
+	}
+
+	cout << "There are " << *total_sales << " books was sold in total!" << endl;
+
+	///////////////////// Memory clear
+
+	for (int i = 0; i < ALL_YEARS; i++)
+	{
+		delete [] arr[i];
+	}
+	delete[]yearlySales;
+	delete[]arr;
+	delete total_sales;
+	return 0 ;
+}
