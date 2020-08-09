@@ -453,5 +453,35 @@ would look like this:
 	..***
 	.****
 	*****
+*/
 
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main()
+{
+	cout << "Enter number of rows: ";
+	unsigned short number_of_rows{};
+	cin >> number_of_rows;
+
+	for (int i = 0; i < number_of_rows; i++)
+	{
+		for (int j = number_of_rows; j > i; j--)
+		{
+			cout << "-";
+		}
+
+		for (int z = number_of_rows-i; z <= number_of_rows; z++)
+		{
+			cout << "+";
+		}
+	cout << endl;
+	}
+
+	return 0;
+}
 */
