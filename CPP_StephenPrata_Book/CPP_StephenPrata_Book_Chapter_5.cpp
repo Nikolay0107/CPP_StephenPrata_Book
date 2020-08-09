@@ -395,3 +395,63 @@ int main()
 	return 0;
 }
 */
+
+
+/*
+Chapter 5
+Task 9
+
+Write a program that matches the description of the program in Programming
+Exercise 8, but use a string class object instead of an array. Include the string
+header file and use a relational operator to make the comparison test.
+
+*/
+/*
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+int main()
+{
+	cout << "Enter words (to stop, enter the word 'done'):" << endl;
+
+	string inputWord{};
+	cin >> inputWord;
+
+	unsigned short counter{};
+
+	while (inputWord!= "done")
+	{
+		counter++;
+		cin >> inputWord;
+	}
+	cout << "You entered a total of " << counter << " words." << endl;
+
+	return 0;
+}
+*/
+
+
+
+/*
+Chapter 5
+Task 10
+
+Write a program using nested loops that asks the user to enter a value for the
+number of rows to display. It should then display that many rows of asterisks, with
+one asterisk in the first row, two in the second row,and so on. For each row, the
+asterisks are preceded by the number of periods needed to make all the rows
+display a total number of characters equal to the number of rows.A sample run
+would look like this:
+	Enter number of rows: 5
+	....*
+	...**
+	..***
+	.****
+	*****
+
+*/
