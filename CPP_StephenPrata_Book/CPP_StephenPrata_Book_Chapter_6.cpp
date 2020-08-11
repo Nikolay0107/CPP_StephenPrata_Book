@@ -222,8 +222,7 @@ values. Have the program run a loop that lets the user select from different alt
 		Next choice: q
 		Bye!
 */
-
-
+/*
 #include <iostream>
 
 using std::cout;
@@ -234,7 +233,6 @@ void showmenu();
 
 const unsigned short STRING_SIZE = 64;
 const unsigned short ARRAY_SIZE = 5;
-
 
 // Benevolent Order of Programmers name structure
 struct bop {
@@ -254,17 +252,76 @@ int main()
 		{"David Horton", "Clergyman", "Yamiaim", 2},
 		{"Marvin Evans", "Song writer", "Quthatl", 0}
 	};
-
+point:
 	showmenu();
+	char choice{};
+	cin.get(choice).get();
+		
+	while (choice != 'a' && choice != 'b' && choice != 'c' && choice != 'd' && choice != 'q')
+	{
+		system("CLS"); // clear console
+
+		cout << "\aInvalid choice! Please, try again!\n\n";
+		showmenu();
+		cin.get(choice).get();
+	}
+
+	while (choice != 'q')
+	{
+		cout << endl;
+			switch (choice)
+			{
+			case'a':
+				for (int i = 0; i < ARRAY_SIZE; i++)
+				{
+					cout <<"  " << members[i].fullname << endl;
+				}
+				break;
+			case'b':
+				for (int i = 0; i < ARRAY_SIZE; i++)
+				{
+					cout << "  " << members[i].title << endl;
+				}
+				break;
+			case'c':
+				for (int i = 0; i < ARRAY_SIZE; i++)
+				{
+					cout << "  " << members[i].bopname << endl;
+				}
+				break;
+			case'd':
+
+				for (int j = 0; j < ARRAY_SIZE; j++)
+				{
+					switch (members[j].preference)
+					{
+					case 0:
+						cout << "  " << members[j].fullname << endl;
+						break;
+					case 1:
+						cout << "  " << members[j].title << endl;
+						break;
+					case 2:
+						cout << "  " << members[j].bopname << endl;
+						break;
+					}
+				}
+				break;
+			}
+		goto point;
+	}
+	cout << "\tBye!\n";
 
 	return 0;
 }
 
 void showmenu()
 {
-	cout << "Benevolent Order of Programmers Report" << endl;
+	cout << "\n  Benevolent Order of Programmers Report" << endl;
 	cout << "\ta. display by name \t\tb. display by title" << endl;
 	cout << "\tc. display by bopname \t\td. display by preference" << endl;
 	cout << "\tq. quit" << endl;
-}
 
+	cout << "\n  Your choice:";
+}
+*/
