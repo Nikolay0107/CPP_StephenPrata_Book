@@ -180,6 +180,47 @@ void showmenu()
 Chapter 6
 Task 4
 
+When you join the Benevolent Order of Programmers, you can be known at BOP meetings by your real name, your job title,
+or your secret BOP name.Write a program that can list members by real name, by job title, by secret name, or by a member’s preference.
+Base the program on the following structure:
+
+	// Benevolent Order of Programmers name structure
+	struct bop {
+	char fullname[strsize]; // real name
+	char title[strsize]; // job title
+	char bopname[strsize]; // secret BOP name
+	int preference; // 0 = fullname, 1 = title, 2 = bopname
+	};
+
+In the program, create a small array of such structures and initialize it to suitable
+values. Have the program run a loop that lets the user select from different alternatives:
+	a. display by name b. display by title
+	c. display by bopname d. display by preference
+	q. quit
+
+	Note that “display by preference” does not mean display the preference member; it
+	means display the member corresponding to the preference number. For instance, if
+	preference is 1, choice d would display the programmer’s job title.A sample run
+	may look something like the following:
+
+		Benevolent Order of Programmers Report
+		a. display by name b. display by title
+		c. display by bopname d. display by preference
+		q. quit
+		Enter your choice: a
+		Wimp Macho
+		Raki Rhodes
+		Celia Laiter
+		Hoppy Hipman
+		Pat Hand
+		Next choice: d
+		Wimp Macho
+		Junior Programmer
+		MIPS
+		Analyst Trainee
+		LOOPY
+		Next choice: q
+		Bye!
 */
 
 
@@ -191,10 +232,30 @@ using std::endl;
 
 void showmenu();
 
+const unsigned short STRING_SIZE = 64;
+const unsigned short ARRAY_SIZE = 5;
+
+
+// Benevolent Order of Programmers name structure
+struct bop {
+	char fullname[STRING_SIZE]; // real name
+	char title[STRING_SIZE]; // job title
+	char bopname[STRING_SIZE]; // secret BOP name
+	int preference; // 0 = fullname, 1 = title, 2 = bopname
+};
+
 int main()
 {
-	showmenu();
+	bop members[ARRAY_SIZE]
+	{
+		{"Conrad Adams", "Telesales person", "Jecly", 1},
+		{"Brian Walsh", "Ship builder", "Alaynca", 2},
+		{"Quentin Baker", "Computer programmer", "Zenelleta", 0},
+		{"David Horton", "Clergyman", "Yamiaim", 2},
+		{"Marvin Evans", "Song writer", "Quthatl", 0}
+	};
 
+	showmenu();
 
 	return 0;
 }
@@ -205,6 +266,5 @@ void showmenu()
 	cout << "\ta. display by name \t\tb. display by title" << endl;
 	cout << "\tc. display by bopname \t\td. display by preference" << endl;
 	cout << "\tq. quit" << endl;
-
 }
 
