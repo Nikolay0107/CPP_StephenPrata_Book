@@ -175,3 +175,36 @@ void showmenu()
 	cout << "\tt) tree\t\t\tg) game" << endl;
 }
 */
+
+/*
+Chapter 6
+Task 4
+
+*/
+
+
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+void showmenu();
+
+int main()
+{
+	showmenu();
+
+
+	return 0;
+}
+
+void showmenu()
+{
+	cout << "Benevolent Order of Programmers Report" << endl;
+	cout << "\ta. display by name \t\tb. display by title" << endl;
+	cout << "\tc. display by bopname \t\td. display by preference" << endl;
+	cout << "\tq. quit" << endl;
+
+}
+
