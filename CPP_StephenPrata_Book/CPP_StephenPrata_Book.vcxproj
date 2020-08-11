@@ -144,6 +144,7 @@
     <ClCompile Include="CPP_StephenPrata_Book_Chapter_3.cpp" />
     <ClCompile Include="CPP_StephenPrata_Book_Chapter_4.cpp" />
     <ClCompile Include="CPP_StephenPrata_Book_Chapter_5.cpp" />
+    <ClCompile Include="CPP_StephenPrata_Book_Chapter_6.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
