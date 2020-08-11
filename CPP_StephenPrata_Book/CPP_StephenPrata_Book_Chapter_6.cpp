@@ -109,3 +109,69 @@ int main()
 }
 */
 
+/*
+Chapter 6
+Task 3
+
+	Write a precursor to a menu-driven program.The program should display a menu
+	offering four choices, each labeled with a letter. If the user responds with a letter
+	other than one of the four valid choices, the program should prompt the user to
+	enter a valid response until the user complies.Then the program should use a
+	switch to select a simple action based on the user’s selection.A program run could
+	look something like this:
+		Please enter one of the following choices:
+		c) carnivore p) pianist
+		t) tree g) game
+		f
+		Please enter a c, p, t, or g: q
+		Please enter a c, p, t, or g: t
+		A maple is a tree.
+*/
+
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+void showmenu();
+
+int main()
+{
+	showmenu();
+	
+	char choice{};
+	cin.get(choice).get();
+
+	while (choice != 'c' && choice != 'p' && choice != 't' && choice != 'g')
+	{
+		system("CLS"); // clear console
+
+		cout << "\aInvalid choice! Please, try again!\n\n";
+		showmenu();
+		cin.get(choice).get();
+	}
+
+	switch (choice)
+	{
+		case'c': cout << "\tHow dangerous is the carnivore diet?\n";
+			break;
+		case'p': cout << "\tThe Pianist is a 2002 war biographical drama film produced and directed by Roman Polanski.\n";
+			break;
+		case't': cout << "\tA maple is a tree.\n";
+			break;
+		case'g': cout << "\tA game is a structured form of play!\n";
+			break;
+	}
+
+	return 0;
+}
+
+void showmenu()
+{
+	cout << "Please enter one of the following choices:" << endl << endl;
+	cout << "\tc) carnivore\t\tp) pianist" << endl;
+	cout << "\tt) tree\t\t\tg) game" << endl;
+}
+*/
