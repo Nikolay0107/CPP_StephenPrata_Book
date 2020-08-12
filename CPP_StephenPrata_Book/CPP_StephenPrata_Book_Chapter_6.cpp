@@ -430,3 +430,102 @@ void showtax(double show_value)
 	cout << endl << "\t You need to pay " << show_value <<"!" << endl;
 }
 */
+
+/*
+Chapter 6
+Task 6
+
+	Put together a program that keeps track of monetary contributions to the Society
+	for the Preservation of Rightful Influence. It should ask the user to enter the 
+	number of contributors and then solicit the user to enter the name and contribution of
+	each contributor.The information should be stored in a dynamically allocated array
+	of structures. Each structure should have two members:a character array (or else a
+	string object) to store the name and a double member to hold the amount of the
+	contribution.After reading all the data, the program should display the names and
+	amounts donated for all donors who contributed $10,000 or more.This list should
+	be headed by the label Grand Patrons.After that, the program should list the
+	remaining donors.That list should be headed Patrons. If there are no donors in one
+	of the categories, the program should print the word “none.”Aside from displaying
+	two categories, the program need do no sorting.
+
+*/
+
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
+struct  contributors
+{
+	string name;
+	double contribution;
+};
+
+const double GRAND_PATRONS_BASELINE = 10000;
+
+int main()
+{
+	cout << "Please, enter the number of contributors: ";
+	
+		int number_of_contributors{};
+
+		cin >> number_of_contributors;
+
+		contributors* contributors_arr = new contributors[number_of_contributors];
+
+		for (int i = 0; i < number_of_contributors; i++)
+		{
+			cin.get(); // clear the symbol of new line
+			cout << "\nEnter the name of the contributor #" << (i+1) << ": ";
+			getline(cin, contributors_arr[i].name);
+
+			cout << "Enter the " << contributors_arr[i].name << "'s contribution: ";
+			cin >> contributors_arr[i].contribution;
+		}
+
+		cout << "\n\n\tGrand Patrons: ";
+
+		// Grand patrons
+		bool is_grand_patrons = false;
+		
+		for (int i = 0; i < number_of_contributors; i++)
+		{
+			if (contributors_arr[i].contribution >= GRAND_PATRONS_BASELINE)
+			{
+				cout << endl << "\t\t\t" << contributors_arr[i].name;
+				is_grand_patrons = true;
+			}
+		}
+
+		if (!is_grand_patrons)
+		{
+			cout << "\tNone" << endl << endl;
+		}
+
+		// Simple patrons
+		bool is_simple_patrons = false;
+
+		cout << "\n\n\tPatrons: ";
+		for (int i = 0; i < number_of_contributors; i++)
+		{
+			if (contributors_arr[i].contribution < GRAND_PATRONS_BASELINE && contributors_arr[i].contribution >0)
+			{
+				cout << endl << "\t\t\t" << contributors_arr[i].name;
+				is_simple_patrons = true;
+			}
+		}
+
+		if (!is_simple_patrons)
+		{
+			cout << "\tNone" << endl << endl;
+		}
+
+		cout << endl << endl;
+		delete[] contributors_arr;
+
+	return 0;
+}
+
