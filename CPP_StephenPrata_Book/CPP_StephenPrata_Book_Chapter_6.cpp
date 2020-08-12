@@ -1,10 +1,10 @@
-/*
+Ôªø/*
 Chapter 6
 Task 1
 
 Write a program that reads keyboard input to the @ symbol and that echoes the
 input except for digits, converting each uppercase character to lowercase,and vice
-versa. (Donít forget the cctype family.)
+versa. (Don‚Äôt forget the cctype family.)
 
 */
 
@@ -117,7 +117,7 @@ Task 3
 	offering four choices, each labeled with a letter. If the user responds with a letter
 	other than one of the four valid choices, the program should prompt the user to
 	enter a valid response until the user complies.Then the program should use a
-	switch to select a simple action based on the userís selection.A program run could
+	switch to select a simple action based on the user‚Äôs selection.A program run could
 	look something like this:
 		Please enter one of the following choices:
 		c) carnivore p) pianist
@@ -181,7 +181,7 @@ Chapter 6
 Task 4
 
 When you join the Benevolent Order of Programmers, you can be known at BOP meetings by your real name, your job title,
-or your secret BOP name.Write a program that can list members by real name, by job title, by secret name, or by a memberís preference.
+or your secret BOP name.Write a program that can list members by real name, by job title, by secret name, or by a member‚Äôs preference.
 Base the program on the following structure:
 
 	// Benevolent Order of Programmers name structure
@@ -198,9 +198,9 @@ values. Have the program run a loop that lets the user select from different alt
 	c. display by bopname d. display by preference
 	q. quit
 
-	Note that ìdisplay by preferenceî does not mean display the preference member; it
+	Note that ‚Äúdisplay by preference‚Äù does not mean display the preference member; it
 	means display the member corresponding to the preference number. For instance, if
-	preference is 1, choice d would display the programmerís job title.A sample run
+	preference is 1, choice d would display the programmer‚Äôs job title.A sample run
 	may look something like the following:
 
 		Benevolent Order of Programmers Report
@@ -321,7 +321,112 @@ void showmenu()
 	cout << "\ta. display by name \t\tb. display by title" << endl;
 	cout << "\tc. display by bopname \t\td. display by preference" << endl;
 	cout << "\tq. quit" << endl;
-
 	cout << "\n  Your choice:";
+}
+*/
+
+
+/*
+Chapter 6
+Task 5
+
+	The Kingdom of Neutronia, where the unit of currency is the tvarp, has the following income tax code:
+		First 5,000 tvarps: 0% tax
+		Next 10,000 tvarps: 10% tax
+		Next 20,000 tvarps: 15% tax
+		Tvarps after 35,000: 20% tax
+	For example, someone earning 38,000 tvarps would owe 5,000 √ó 0.00 + 10,000 √ó
+	0.10 + 20,000 √ó 0.15 + 3,000 √ó 0.20, or 4,600 tvarps.Write a program that uses a
+	loop to solicit incomes and to report tax owed.The loop should terminate when
+	the user enters a negative number or non-numeric input.
+*/
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+void showmenu();
+void showtax(double show_value);
+
+const double tax_zero = 0;
+const double tax_first = 0.1;
+const double tax_second = 0.15;
+const double tax_third = 0.2;
+
+const double tvarps_zero = 5000;
+const double tvarps_first = 10000;
+const double tvarps_second = 20000;
+const double tvarps_third = 35000;
+
+int main()
+{
+	showmenu();
+	double incomes{};
+	double tax{};
+	int count;
+
+	while (cin >> incomes && incomes >= 0)
+	{
+		if (incomes >= 0 && incomes <= 5000)
+		{
+			if (incomes == 0)
+			{
+				cout << "\n\tYou are tax exempt!" << endl;
+				cout << "\tYou have no income!" << endl;
+
+			}
+			else if (incomes < tvarps_zero)
+			{
+				cout << "\n\tYou are tax exempt!" << endl;
+				cout << "\tYour income <" << incomes << "> is smaller than " << tvarps_zero << endl;;
+			}
+			else if (incomes == tvarps_zero)
+			{
+				cout << "\n\tYou are tax exempt!" << endl;
+				cout << "\tYour income is equal to " << tvarps_zero << endl;;
+			}
+		}
+
+		if (incomes >5000 && incomes <= 15000)
+		{
+			tax = tvarps_zero * tax_zero + (incomes - tvarps_zero ) * tax_first;
+
+			showtax(tax);
+		}
+
+		if (incomes > 15000 && incomes <=35000)
+		{
+			tax = tvarps_zero * tax_zero + tvarps_first * tax_first + (incomes - tvarps_zero - tvarps_first) * tax_second;
+				
+			showtax(tax);
+		}
+
+		if (incomes > 35000)
+		{
+			tax = tvarps_zero * tax_zero + tvarps_first * tax_first + tvarps_second * tax_second + (incomes - tvarps_zero - tvarps_first - tvarps_second) * tax_third;
+
+			showtax(tax);
+		}
+		cout << "\n  Please, enter your incomes:";
+	}
+
+	return 0;
+}
+
+void showmenu()
+{
+	cout << "\n  The Kingdom of Neutronia has the following income tax code:" << endl << endl;
+	cout << "\t First 5,000 tvarps: 0% tax" << endl;
+	cout << "\t Next 10,000 tvarps: 10% tax" << endl;
+	cout << "\t Next 20,000 tvarps: 15% tax" << endl;
+	cout << "\t Tvarps after 35,000: 20% tax" << endl;
+	cout << "\n  Please, enter your incomes:";
+}
+
+void showtax(double show_value)
+{
+	cout << endl << "\t You need to pay " << show_value <<"!" << endl;
 }
 */
