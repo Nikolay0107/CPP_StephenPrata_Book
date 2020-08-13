@@ -546,6 +546,8 @@ Task 7
 						2 others
 */
 
+/*
+
 #include <iostream>
 
 using std::cout;
@@ -556,16 +558,16 @@ bool is_vovel(char symbol);
 
 int main()
 {
-	char ch[20];
+	char ch[20]={};
 	int vowel{};
 	int consonant{};
 	int other{};
 
-	cout << "Please, enter your sentence (or symbol q to quit):";
+	cout << "Please, enter your sentence (or symbol q to quit): ";
 
 	cin >> ch;
 
-	while (ch[0] != 'q')
+	while (ch[1] != '\0' || ch[0] != 'q')
 	{
 		if (is_vovel(ch[0]))
 			vowel++;
@@ -585,9 +587,8 @@ int main()
 
 bool is_vovel(char symbol)
 {
-	 
 	return symbol == 'a' || symbol == 'e' || symbol == 'i' || symbol == 'o' || symbol == 'u'
 		|| symbol == 'A' || symbol == 'E' || symbol == 'I' || symbol == 'O' || symbol == 'U';
 }
 
-
+*/
