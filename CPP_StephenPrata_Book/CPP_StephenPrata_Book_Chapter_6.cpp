@@ -592,3 +592,54 @@ bool is_vovel(char symbol)
 }
 
 */
+
+
+/*
+Chapter 6
+Task 8
+	Write a program that opens a text file, reads it character-by-character to the end of
+	the file,and reports the number of characters in the file.
+*/
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib> // поддержка exit ()
+
+
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::ifstream;
+
+const int SIZE = 60;
+
+
+int main()
+{
+	ifstream inFile;
+	inFile.open("text.txt");
+
+	if (!inFile.is_open())
+	{
+		cout << " Could not open the file " << endl;
+		cout << " Program terminating. \n";
+		exit(EXIT_FAILURE); // same as return 1;
+	}
+
+	unsigned int count{};
+	inFile.get();
+
+	while (!inFile.eof())
+	{
+		inFile.get();
+		count++;
+	}
+
+	inFile.close();
+
+	cout << "The file contains " << count << " characters\n";
+
+	cin.get();
+	return 0;
+}
