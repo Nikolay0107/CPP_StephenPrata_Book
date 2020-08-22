@@ -39,6 +39,8 @@ int main()
 }
 */
 
+//-----------------------------------------------------
+
 /*
 Chapter 6
 Task 2
@@ -109,6 +111,8 @@ int main()
 }
 */
 
+//-----------------------------------------------------
+
 /*
 Chapter 6
 Task 3
@@ -175,6 +179,8 @@ void showmenu()
 	cout << "\tt) tree\t\t\tg) game" << endl;
 }
 */
+
+//-----------------------------------------------------
 
 /*
 Chapter 6
@@ -325,6 +331,7 @@ void showmenu()
 }
 */
 
+//-----------------------------------------------------
 
 /*
 Chapter 6
@@ -431,6 +438,8 @@ void showtax(double show_value)
 }
 */
 
+//-----------------------------------------------------
+
 /*
 Chapter 6
 Task 6
@@ -530,6 +539,8 @@ int main()
 }
 */
 
+//-----------------------------------------------------
+
 /*
 Chapter 6
 Task 7
@@ -593,6 +604,7 @@ bool is_vovel(char symbol)
 
 */
 
+//-----------------------------------------------------
 
 /*
 Chapter 6
@@ -600,12 +612,10 @@ Task 8
 	Write a program that opens a text file, reads it character-by-character to the end of
 	the file,and reports the number of characters in the file.
 */
-
+/*
 #include <iostream>
 #include <fstream>
-#include <cstdlib> // поддержка exit ()
-
-
+#include <cstdlib> // support exit ()
 
 using std::cout;
 using std::cin;
@@ -613,7 +623,6 @@ using std::endl;
 using std::ifstream;
 
 const int SIZE = 60;
-
 
 int main()
 {
@@ -643,3 +652,122 @@ int main()
 	cin.get();
 	return 0;
 }
+*/
+
+//-----------------------------------------------------
+
+/*
+Chapter 6
+Task 9
+	Do Programming Exercise 6 but modify it to get information from a file.The first
+	item in the file should be the number of contributors,and the rest of the file should
+	consist of pairs of lines, with the first line of each pair being a contributor’s name
+	and the second line being a contribution.That is, the file should look like this:
+		4
+		Sam Stone
+		2000
+		Freida Flass
+		100500
+		Tammy Tubbs
+		5000
+		Rich Raptor
+		55000
+*/
+/*
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <cstdlib> // support exit ()
+
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::ifstream;
+
+struct  contributors
+{
+	string name;
+	double contribution;
+};
+
+const double GRAND_PATRONS_BASELINE = 10000.0;
+
+int main()
+{
+	ifstream inFile;
+	inFile.open("contributors.txt");
+
+	if (!inFile.is_open())
+	{
+		cout << " Could not open the file " << endl;
+		cout << " Program terminating. \n";
+		exit(EXIT_FAILURE); // same as return 1;
+	}
+		
+	unsigned int number_of_contributors{};
+
+	inFile >> number_of_contributors;
+	inFile.get();
+
+	contributors* contributors_arr = new contributors[number_of_contributors];
+
+	for (int i = 0; i < number_of_contributors; i++)
+	{
+		getline(inFile, contributors_arr[i].name);
+		inFile >> contributors_arr[i].contribution;
+
+		inFile.get();
+		
+		//cin.get(); // clear the symbol of new line
+		//cout << "\nEnter the name of the contributor #" << (i + 1) << ": ";
+		//getline(cin, contributors_arr[i].name);
+
+		//cout << "Enter the " << contributors_arr[i].name << "'s contribution: ";
+		//cin >> contributors_arr[i].contribution;
+	}
+	inFile.close();
+	cout << "\n\n\tGrand Patrons: ";
+
+	// Grand patrons
+	bool is_grand_patrons = false;
+
+	for (int i = 0; i < number_of_contributors; i++)
+	{
+		if (contributors_arr[i].contribution >= GRAND_PATRONS_BASELINE)
+		{
+			cout << endl << "\t\t\t" << contributors_arr[i].name;
+			is_grand_patrons = true;
+		}
+	}
+
+	if (!is_grand_patrons)
+	{
+		cout << "\tNone" << endl << endl;
+	}
+
+	// Simple patrons
+	bool is_simple_patrons = false;
+
+	cout << "\n\n\tPatrons: ";
+	for (int i = 0; i < number_of_contributors; i++)
+	{
+		if (contributors_arr[i].contribution < GRAND_PATRONS_BASELINE && contributors_arr[i].contribution >0)
+		{
+			cout << endl << "\t\t\t" << contributors_arr[i].name;
+			is_simple_patrons = true;
+		}
+	}
+
+	if (!is_simple_patrons)
+	{
+		cout << "\tNone" << endl << endl;
+	}
+
+	cout << endl << endl;
+	delete[] contributors_arr;
+
+	cin.get();
+	return 0;
+}
+*/
