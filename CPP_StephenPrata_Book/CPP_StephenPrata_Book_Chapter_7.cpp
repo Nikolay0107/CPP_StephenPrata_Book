@@ -1,31 +1,25 @@
-// В конце ноября, в оттепель, часов в девять утра, поезд Петербургско-Варшавской железной дороги
-// на всех парах подходил к Петербургу.
-// Было так сыро и туманно, что насилу рассвело;
-// в десяти шагах, вправо и влево от дороги, трудно было разглядеть хоть что - нибудь из окон вагона.
+п»ї//Chapter review #1
 
-#include <iostream>
+void igor(); // or void igor(void);
 
-using std::string;
-using std::cout;
-using std::cin;
-using std::endl;
+float tofu(int); //or float tofu(int n)
 
-int main()
+double mpg(double a, double b); 
+
+long summation(long arr[], int size);
+
+double doctor(const char *str);
+
+void ofcourse(boss struct_1);
+
+char *plot(map *pmap);
+
+
+//Chapter review #2 Р СѓСЃСЃРєРёР№ С‚РµРєСЃС‚
+
+
+
+void set_arr(int arr[], int size, int value)
 {
-	const float MILES_IN_100_KILOMETERS = 62.14;
-	const float LITERS_IN_1_GALLON = 3.875;
 
-	float consumption_in_liters{};
-	cout << "Please, enter the fuel consumption of your car in liters per 100 kilometers: ";
-	cin >> consumption_in_liters;
-
-	float consumption_in_gallons{};
-	consumption_in_gallons = consumption_in_liters / LITERS_IN_1_GALLON;
-
-	float result{};
-	result = MILES_IN_100_KILOMETERS / consumption_in_gallons;
-
-	cout << "Your car can drive " << result << " miles per gallon!" << endl;
-
-	return 0;
 }
