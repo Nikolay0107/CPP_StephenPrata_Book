@@ -45,4 +45,25 @@
 		return is_bigger;
 	}
 
-//Chapter review #6
+//Chapter review #8
+
+	int replace(char* str, char c1, char c2)
+	{
+		int count{};
+		while (*str)   // пока не достигнем 0 (конца строки)
+		{
+			if (*str == c1)  // проверяем разыменованный указатель на соответствие значения
+			{
+				*str = c2;
+				count++;
+			}
+
+			str++; // увеличиваем на 1 указатель без разыменования
+		}
+
+		return count;
+
+	}
+
+
+	//Chapter review #11
