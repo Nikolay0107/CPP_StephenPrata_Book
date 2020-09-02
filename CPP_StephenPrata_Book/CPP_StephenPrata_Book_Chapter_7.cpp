@@ -65,5 +65,8 @@
 
 	}
 
-
 	//Chapter review #11
+
+	int judge( int (*pf) (const char*));
+
+	//Chapter review #12
