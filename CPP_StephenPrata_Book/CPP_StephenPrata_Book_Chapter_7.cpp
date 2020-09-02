@@ -149,3 +149,83 @@ double harmonic_funk(double a, double b) {
 	return 2.0 * a * b / (a + b);
 }
 */
+
+
+/*
+Chapter 7
+Task 2
+
+Write a program that asks the user to enter up to 10 golf scores, which are to be
+stored in an array.You should provide a means for the user to terminate input prior
+to entering 10 scores.The program should display all the scores on one line and
+report the average score. Handle input, display,and the average calculation with
+three separate array-processing functions.
+*/
+
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+const short ARR_SIZE = 10;
+
+
+void fill_array( short arr[]);
+void display_array( short arr[]);
+float average( short arr[]);
+
+int main() {
+
+	short golf_scores[ARR_SIZE]{};
+
+	fill_array(golf_scores);
+
+	cout << "\nThe scores you entered is:" << endl << endl;
+		
+	display_array(golf_scores);
+	cout << "\nThe average of the scores you entered is: " << average(golf_scores) << endl << endl;
+	
+	return 0;
+}
+
+
+void fill_array( short golf_scores[])
+{
+	for (int i = 0; i < ARR_SIZE; i++) {
+		 short temp_value{};
+
+		cout << "Enter score #" << (i + 1) << ":";
+		cin >> temp_value;
+
+		if (temp_value > 0)
+			golf_scores[i] = temp_value;
+		else if (temp_value < 0)
+		{
+			cout << "Error! You entered negative number. Program terminated!";
+			break;
+		}
+		else
+			break;
+	}
+}
+
+void display_array( short golf_scores[]) {
+	for (int i = 0; golf_scores[i] != 0; i++)
+		cout << "Score #" << (i + 1) << ": " << golf_scores[i] << endl;
+}
+
+float average( short golf_scores[])
+{
+	float sum = 0.0f;
+	 short count = 1;
+
+	for (int i = 0; golf_scores[i] != 0; i++)
+	{
+		sum += golf_scores[i];
+		count++;
+	}
+	return sum / count;
+}
+*/
