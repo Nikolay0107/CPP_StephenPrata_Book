@@ -1,4 +1,5 @@
-﻿//Chapter review #2
+﻿/*
+//Chapter review #2
 
 	void igor(); // or void igor(void);
 
@@ -70,3 +71,42 @@
 	int judge( int (*pf) (const char*));
 
 	//Chapter review #12
+
+	struct applicant {
+		char name[30];
+		int credit_ratings[3];
+	};
+
+	void display(applicant ap) {
+
+		cout << ap.name << endl;
+		for (int i = 0; i < 3; i++)
+			cout << ap.credit_ratings[i] << endl;
+	}
+
+	void show(const applicant* pa) {
+		cout << pa->name << endl;
+		for (int i = 0; i < 3; i++)
+			cout << pa->credit_ratings[i] << endl;
+	}
+
+
+
+	//Chapter review #13
+
+	void f1(applicant* а);
+	const char* f2 (const applicant * a1, const applicant * а2);
+
+	typedef void (*p_f1) (applicant*);
+
+	p_f1 p1 = f1;
+
+	typedef const char* (*p_f2) (const applicant*, const applicant*);
+
+	p_f2 p2 = f2;
+
+	p_f1 ap[5];
+	p_f2(*pa)[10];
+
+
+*/
