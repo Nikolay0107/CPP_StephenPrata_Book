@@ -107,6 +107,45 @@
 
 	p_f1 ap[5];
 	p_f2(*pa)[10];
+*/
 
 
+/*
+Chapter 7
+Task 1
+
+Write a program that repeatedly asks the user to enter pairs of numbers until at
+least one of the pair is 0. For each pair, the program should use a function to calculate the harmonic mean of the numbers.The function should return the answer to
+main(), which should report the result.The harmonic mean of the numbers is the
+inverse of the average of the inverses and can be calculated as follows:
+harmonic mean = 2.0 × x × y / (x + y)
+
+*/
+/*
+#include <iostream>
+double harmonic_funk(double a, double b);
+
+int main() {
+	double first_value;
+	double second_value;
+
+	std::cout << "Please enter two numbers: " << std::endl;
+
+	while (std::cin >> first_value >> second_value)
+	{
+
+		if (first_value == 0 || second_value == 0)
+			break;
+		std::cout << "The harmonic mean of values is " << harmonic_funk(first_value, second_value) << std::endl;
+		std::cout << "Please enter two numbers: " << std::endl;
+	}
+
+	std::cout << "\nGoodbye!" << std::endl;
+	return 0;
+}
+
+
+double harmonic_funk(double a, double b) {
+	return 2.0 * a * b / (a + b);
+}
 */
