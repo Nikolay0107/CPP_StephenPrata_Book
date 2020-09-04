@@ -229,3 +229,29 @@ float average( short golf_scores[])
 	return sum / count;
 }
 */
+
+
+/*
+Chapter 7
+Task 3
+
+	Here is a structure declaration:
+
+	struct box
+	{
+		char maker[40];
+		float height;
+		float width;
+		float length;
+		float volume;
+	};
+
+		a. Write a function that passes a box structure by value and that displays the
+		value of each member.
+
+		b. Write a function that passes the address of a box structure and that sets the
+		volume member to the product of the other three dimensions.
+
+		c. Write a simple program that uses these two functions.
+
+*/
