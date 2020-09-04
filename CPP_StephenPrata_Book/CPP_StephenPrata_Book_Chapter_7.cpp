@@ -255,3 +255,140 @@ Task 3
 		c. Write a simple program that uses these two functions.
 
 */
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+struct box
+	{
+		char maker[40];
+		float height;
+		float width;
+		float length;
+		float volume;
+	};
+
+box Create_box();
+void Display_box_values(box b);
+void Calculate_box_volume(box* b);
+
+int main() {
+	box new_box = Create_box();
+	Display_box_values(new_box);
+	
+	return 0;
+}
+
+box Create_box()
+{
+	box new_box;
+
+	cout << "Enter name of the manufacturer: ";
+	cin >> new_box.maker;
+
+	cout << "Enter box height: ";
+	cin >> new_box.height;
+
+	cout << "Enter box width: ";
+	cin >> new_box.width;
+
+	cout << "Enter box length: ";
+	cin >> new_box.length;
+
+	Calculate_box_volume(&new_box);
+
+	return new_box;
+}
+
+void Calculate_box_volume(box* b)
+{
+	b->volume = b->height * b->width * b->length;
+}
+
+void Display_box_values(box b)
+{
+	cout << "\nManufacturer name: " << b.maker << std::endl;
+	cout << "Height: " << b.height << std::endl;
+	cout << "Width: " << b.width << std::endl;
+	cout << "Length: " << b.length << std::endl;
+	cout << "Volume: " << b.volume << std::endl;
+}
+
+
+*/
+
+
+/*
+Chapter 7
+Task 4
+
+	Many state lotteries use a variation of the simple lottery portrayed by Listing 7.4. In
+	these variations you choose several numbers from one set and call them the field
+	numbers. For example, you might select five numbers from the field of 1–47).You
+	also pick a single number (called a mega number or a power ball, etc.) from a second range,
+	such as 1–27.To win the grand prize, you have to guess all the picks correctly.
+	The chance of winning is the product of the probability of picking all the
+	field numbers times the probability of picking the mega number. For instance, the
+	probability of winning the example described here is the product of the probability
+	of picking 5 out of 47 correctly times the probability of picking 1 out of 27 correctly. 
+	Modify Listing 7.4 to calculate the probability of winning this kind of lottery.
+	*/
+
+/*
+#include <iostream>
+
+long double probability(unsigned numbers, unsigned picks, unsigned meganumber_range);
+
+
+int main()
+{
+	using namespace std;
+	double total, choices, meganumber_range;
+
+	// Ввод общего количества номеров и количества номеров, которые нужно угадать
+
+	cout << "Enter the total number of choices on the game card and the number of picks allowed:\n";
+
+	while ((cin >> total >> choices) && choices <= total)
+	{
+
+		cout << "Enter the total number of meganumber range:\n";
+			
+		cin >> meganumber_range;
+		
+		cout << " You have one chance in ";
+		cout << probability(total, choices, meganumber_range);
+		cout << " of winning . \n";
+		cout << "Next two numbers (q to quit) : ";
+		// вычисление и вывод шансов
+		// Ввод следующих двух чисел(q для завершения)
+	}
+
+	cout << "bye\n";
+
+	return 0;
+}
+
+
+// Следующая функция вычисляет вероятность правильного
+// угадывания picks чисел из numbers возможных
+
+long double probability(unsigned numbers, unsigned picks, unsigned meganumber_range)
+{
+	long double result = 1.0; // несколько локальных переменных
+	long double n;
+	unsigned р;
+	unsigned m = meganumber_range;
+
+	for (n = numbers, р = picks; р > 0; n--, р--)
+		result = result * n / р;
+
+	result *= m;
+
+	return result;
+}
+
+*/
